@@ -9,10 +9,6 @@
 #import "HLElasticView.h"
 #import "HLUtility.h"
 
-#define SPRING_CONSTANT 200.0f
-#define DAMPING_CONSTANT 22.5f
-#define STEP_SIZE 1/60.0f
-
 @interface HLElasticView ()
 @property (nonatomic, assign) CGPoint velocity;
 @property (nonatomic, assign) CGPoint goal;
@@ -64,35 +60,6 @@
 
 
 #pragma mark -
-
-//https://twitter.com/lorenb/status/408068815369412608
-//http://gafferongames.com/game-physics/integration-basics/
-//https://github.com/facebook/rebound/blob/master/rebound-js/rebound.js
-//http://stackoverflow.com/questions/7365090/damping-effect-of-spring-mass-system-or-is-this-elasticease
-//http://ariya.ofilabs.com/2011/10/flick-list-with-its-momentum-scrolling-and-deceleration.html
-
-CGFloat accelerationForPosition(CGFloat position, CGFloat velocity)
-{
-	return - SPRING_CONSTANT * position - DAMPING_CONSTANT * velocity;
-}
-
-void integrate(CGFloat currentPosition, CGFloat currentVelocity, CGFloat *dxdt, CGFloat *dvdt)
-{
-    CGFloat aPosition = currentVelocity;
-    CGFloat aVelocity = accelerationForPosition(currentPosition, currentVelocity);
-    
-    CGFloat bPosition = currentVelocity + STEP_SIZE * 0.5f * aVelocity;
-    CGFloat bVelocity = accelerationForPosition(currentPosition + STEP_SIZE * 0.5f * aPosition, currentVelocity + STEP_SIZE * 0.5f * aVelocity);
-    
-    CGFloat cPosition = currentVelocity + STEP_SIZE * 0.5f * bVelocity;
-    CGFloat cVelocity = accelerationForPosition(currentPosition + STEP_SIZE * 0.5f * bPosition, currentVelocity + STEP_SIZE * 0.5f * bVelocity);
-    
-    CGFloat dPosition = currentVelocity + STEP_SIZE * cVelocity;
-    CGFloat dVelocity = accelerationForPosition(currentPosition + STEP_SIZE * cPosition, currentVelocity + STEP_SIZE * cVelocity);
-    
-    *dxdt = 1.0f/6.0f * (aPosition + 2.0f*(bPosition + cPosition) + dPosition);
-    *dvdt = 1.0f/6.0f * (aVelocity + 2.0f*(bVelocity + cVelocity) + dVelocity);
-}
 
 - (void)updateLocation
 {
