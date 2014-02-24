@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define SPRING_CONSTANT 250.0f
-#define DAMPING_CONSTANT 30.0f
+#define DAMPING_CONSTANT 26.5f
 #define STEP_SIZE 1/60.0f
 #define VIEW_OFFSET 64.0f
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
