@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#define SPRING_CONSTANT 200.0f
-#define DAMPING_CONSTANT 22.5f
+#define SPRING_CONSTANT 250.0f
+#define DAMPING_CONSTANT 30.0f
 #define STEP_SIZE 1/60.0f
+#define VIEW_OFFSET 64.0f
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
-#define CENTER(origin, length) origin + length / 2
+#define CENTER(origin, length) (origin + (length / 2))
 
-CGFloat rubberBandedValueForDistance(CGFloat distance);
-CGFloat dampedValue(CGFloat origin, CGFloat length, CGFloat delta, CGFloat upperThreshold);
 CGPoint dampedDistance(CGRect frame, CGPoint delta);
-CGFloat accelerationForPosition(CGFloat position, CGFloat velocity);
+CGFloat scaleForDistance(CGFloat referenceLength, CGFloat currentLength, CGFloat delta);
+CGFloat dampedScale(CGRect referenceFrame, CGRect currentFrame, CGFloat *delta);
 void integrate(CGFloat currentPosition, CGFloat currentVelocity, CGFloat *dxdt, CGFloat *dvdt);

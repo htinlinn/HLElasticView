@@ -12,8 +12,8 @@
 
 CGFloat rubberBandedValueForDistance(CGFloat distance)
 {
-    CGFloat constant = 0.35f; // UIScrollView default value == 0.55f
-    CGFloat dimension = 960.0f;
+    CGFloat constant = 0.30f; // UIScrollView default value == 0.55f
+    CGFloat dimension = SCREEN_HEIGHT;
     
     return (1.0f - (1.0f / ((distance * constant / dimension) + 1.0))) * dimension;
 }
@@ -23,13 +23,9 @@ CGFloat dampedValue(CGFloat origin, CGFloat length, CGFloat delta, CGFloat upper
     CGFloat newDelta = delta;
     
     if (origin < 0.0f) {
-        if (delta < 0.0f) {
-            newDelta = rubberBandedValueForDistance(delta);
-        }
+        newDelta = rubberBandedValueForDistance(delta);
     } else if (origin + length > upperThreshold) {
-        if (delta > 0.0f) {
-            newDelta = rubberBandedValueForDistance(delta);
-        }
+        newDelta = rubberBandedValueForDistance(delta);
     } else if (origin + delta < 0.0f) {
         newDelta = rubberBandedValueForDistance(origin + delta) - origin;
     } else if (origin + length + delta > upperThreshold) {
@@ -42,9 +38,20 @@ CGFloat dampedValue(CGFloat origin, CGFloat length, CGFloat delta, CGFloat upper
 CGPoint dampedDistance(CGRect frame, CGPoint delta)
 {
     CGFloat deltaX = dampedValue(frame.origin.x, frame.size.width, delta.x, SCREEN_WIDTH);
-    CGFloat deltaY = dampedValue(frame.origin.y, frame.size.height, delta.y, SCREEN_HEIGHT);
-    
+    CGFloat deltaY = dampedValue(frame.origin.y, frame.size.height, delta.y, SCREEN_HEIGHT - VIEW_OFFSET);
+        
     return CGPointMake(deltaX, deltaY);
+}
+
+CGFloat scaleForDistance(CGFloat referenceLength, CGFloat currentLength, CGFloat delta)
+{
+    return (currentLength - delta) / referenceLength; // Neg Delta = Scale Up; Pos Delta = Scale Down
+}
+
+CGFloat dampedScale(CGRect referenceFrame, CGRect currentFrame, CGFloat *delta)
+{
+    *delta = dampedValue(currentFrame.origin.y, 0.0f, *delta, referenceFrame.origin.y);
+    return scaleForDistance(referenceFrame.size.height, currentFrame.size.height, *delta);
 }
 
 //https://twitter.com/lorenb/status/408068815369412608

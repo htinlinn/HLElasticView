@@ -1,15 +1,15 @@
 //
-//  HLElasticView.m
+//  HLElasticSnapView.m
 //  Playground
 //
 //  Created by Htin Linn on 2/11/14.
 //  Copyright (c) 2014 Htin Linn. All rights reserved.
 //
 
-#import "HLElasticView.h"
+#import "HLElasticSnapView.h"
 #import "HLUtility.h"
 
-@interface HLElasticView ()
+@interface HLElasticSnapView ()
 @property (nonatomic, assign) CGPoint velocity;
 @property (nonatomic, assign) CGPoint goal;
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -17,7 +17,7 @@
 - (void)updateLocation;
 @end
 
-@implementation HLElasticView
+@implementation HLElasticSnapView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -55,7 +55,10 @@
 
 - (void)stopSnapping
 {
-    [self.displayLink invalidate];
+    if (self.displayLink) {
+        [self.displayLink invalidate];
+        self.displayLink = nil;
+    }
 }
 
 

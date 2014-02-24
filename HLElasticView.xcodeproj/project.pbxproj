@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48107DB618B97E9B00CC13E0 /* HLElasticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48107DB318B97E9B00CC13E0 /* HLElasticView.m */; };
 		48107DB718B97E9B00CC13E0 /* HLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 48107DB518B97E9B00CC13E0 /* HLUtility.m */; };
 		487DB0A618B97457009D0E17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DB0A518B97457009D0E17 /* Foundation.framework */; };
 		487DB0A818B97457009D0E17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DB0A718B97457009D0E17 /* CoreGraphics.framework */; };
@@ -15,14 +14,17 @@
 		487DB0B018B97457009D0E17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 487DB0AE18B97457009D0E17 /* InfoPlist.strings */; };
 		487DB0B218B97457009D0E17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 487DB0B118B97457009D0E17 /* main.m */; };
 		487DB0B618B97457009D0E17 /* HLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487DB0B518B97457009D0E17 /* HLAppDelegate.m */; };
-		487DB0B918B97457009D0E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487DB0B718B97457009D0E17 /* Main.storyboard */; };
-		487DB0BC18B97457009D0E17 /* HLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487DB0BB18B97457009D0E17 /* HLViewController.m */; };
 		487DB0BE18B97457009D0E17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DB0BD18B97457009D0E17 /* Images.xcassets */; };
 		487DB0C518B97457009D0E17 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DB0C418B97457009D0E17 /* XCTest.framework */; };
 		487DB0C618B97457009D0E17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DB0A518B97457009D0E17 /* Foundation.framework */; };
 		487DB0C718B97457009D0E17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DB0A918B97457009D0E17 /* UIKit.framework */; };
 		487DB0CF18B97457009D0E17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 487DB0CD18B97457009D0E17 /* InfoPlist.strings */; };
 		487DB0D118B97457009D0E17 /* HLElasticViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 487DB0D018B97457009D0E17 /* HLElasticViewTests.m */; };
+		48950E5818BA4F7B00CC6C25 /* HLElasticSnapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48950E5718BA4F7B00CC6C25 /* HLElasticSnapView.m */; };
+		48950E5B18BA503F00CC6C25 /* HLElasticScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48950E5A18BA503F00CC6C25 /* HLElasticScaleView.m */; };
+		48950E5E18BA998E00CC6C25 /* HLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48950E5D18BA998E00CC6C25 /* HLTableViewController.m */; };
+		48950E6118BA9B3200CC6C25 /* HLSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48950E6018BA9B3200CC6C25 /* HLSnapViewController.m */; };
+		48950E6418BAA06F00CC6C25 /* HLScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48950E6318BAA06F00CC6C25 /* HLScaleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		48107DB218B97E9B00CC13E0 /* HLElasticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLElasticView.h; sourceTree = "<group>"; };
-		48107DB318B97E9B00CC13E0 /* HLElasticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLElasticView.m; sourceTree = "<group>"; };
 		48107DB418B97E9B00CC13E0 /* HLUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLUtility.h; sourceTree = "<group>"; };
 		48107DB518B97E9B00CC13E0 /* HLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLUtility.m; sourceTree = "<group>"; };
 		487DB0A218B97457009D0E17 /* HLElasticView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLElasticView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,15 +50,22 @@
 		487DB0B318B97457009D0E17 /* HLElasticView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HLElasticView-Prefix.pch"; sourceTree = "<group>"; };
 		487DB0B418B97457009D0E17 /* HLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLAppDelegate.h; sourceTree = "<group>"; };
 		487DB0B518B97457009D0E17 /* HLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAppDelegate.m; sourceTree = "<group>"; };
-		487DB0B818B97457009D0E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		487DB0BA18B97457009D0E17 /* HLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLViewController.h; sourceTree = "<group>"; };
-		487DB0BB18B97457009D0E17 /* HLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLViewController.m; sourceTree = "<group>"; };
 		487DB0BD18B97457009D0E17 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		487DB0C318B97457009D0E17 /* HLElasticViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLElasticViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487DB0C418B97457009D0E17 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		487DB0CC18B97457009D0E17 /* HLElasticViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HLElasticViewTests-Info.plist"; sourceTree = "<group>"; };
 		487DB0CE18B97457009D0E17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		487DB0D018B97457009D0E17 /* HLElasticViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLElasticViewTests.m; sourceTree = "<group>"; };
+		48950E5618BA4F7B00CC6C25 /* HLElasticSnapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLElasticSnapView.h; sourceTree = "<group>"; };
+		48950E5718BA4F7B00CC6C25 /* HLElasticSnapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLElasticSnapView.m; sourceTree = "<group>"; };
+		48950E5918BA503F00CC6C25 /* HLElasticScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLElasticScaleView.h; sourceTree = "<group>"; };
+		48950E5A18BA503F00CC6C25 /* HLElasticScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLElasticScaleView.m; sourceTree = "<group>"; };
+		48950E5C18BA998E00CC6C25 /* HLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableViewController.h; sourceTree = "<group>"; };
+		48950E5D18BA998E00CC6C25 /* HLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableViewController.m; sourceTree = "<group>"; };
+		48950E5F18BA9B3200CC6C25 /* HLSnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSnapViewController.h; sourceTree = "<group>"; };
+		48950E6018BA9B3200CC6C25 /* HLSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSnapViewController.m; sourceTree = "<group>"; };
+		48950E6218BAA06F00CC6C25 /* HLScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLScaleViewController.h; sourceTree = "<group>"; };
+		48950E6318BAA06F00CC6C25 /* HLScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLScaleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +127,16 @@
 			children = (
 				487DB0B418B97457009D0E17 /* HLAppDelegate.h */,
 				487DB0B518B97457009D0E17 /* HLAppDelegate.m */,
-				487DB0B718B97457009D0E17 /* Main.storyboard */,
-				487DB0BA18B97457009D0E17 /* HLViewController.h */,
-				487DB0BB18B97457009D0E17 /* HLViewController.m */,
-				48107DB218B97E9B00CC13E0 /* HLElasticView.h */,
-				48107DB318B97E9B00CC13E0 /* HLElasticView.m */,
+				48950E5C18BA998E00CC6C25 /* HLTableViewController.h */,
+				48950E5D18BA998E00CC6C25 /* HLTableViewController.m */,
+				48950E5F18BA9B3200CC6C25 /* HLSnapViewController.h */,
+				48950E6018BA9B3200CC6C25 /* HLSnapViewController.m */,
+				48950E6218BAA06F00CC6C25 /* HLScaleViewController.h */,
+				48950E6318BAA06F00CC6C25 /* HLScaleViewController.m */,
+				48950E5618BA4F7B00CC6C25 /* HLElasticSnapView.h */,
+				48950E5718BA4F7B00CC6C25 /* HLElasticSnapView.m */,
+				48950E5918BA503F00CC6C25 /* HLElasticScaleView.h */,
+				48950E5A18BA503F00CC6C25 /* HLElasticScaleView.m */,
 				48107DB418B97E9B00CC13E0 /* HLUtility.h */,
 				48107DB518B97E9B00CC13E0 /* HLUtility.m */,
 				487DB0BD18B97457009D0E17 /* Images.xcassets */,
@@ -241,7 +253,6 @@
 			files = (
 				487DB0BE18B97457009D0E17 /* Images.xcassets in Resources */,
 				487DB0B018B97457009D0E17 /* InfoPlist.strings in Resources */,
-				487DB0B918B97457009D0E17 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,11 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				487DB0BC18B97457009D0E17 /* HLViewController.m in Sources */,
+				48950E6418BAA06F00CC6C25 /* HLScaleViewController.m in Sources */,
+				48950E5E18BA998E00CC6C25 /* HLTableViewController.m in Sources */,
+				48950E5818BA4F7B00CC6C25 /* HLElasticSnapView.m in Sources */,
 				487DB0B618B97457009D0E17 /* HLAppDelegate.m in Sources */,
-				48107DB618B97E9B00CC13E0 /* HLElasticView.m in Sources */,
 				487DB0B218B97457009D0E17 /* main.m in Sources */,
 				48107DB718B97E9B00CC13E0 /* HLUtility.m in Sources */,
+				48950E6118BA9B3200CC6C25 /* HLSnapViewController.m in Sources */,
+				48950E5B18BA503F00CC6C25 /* HLElasticScaleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +307,6 @@
 				487DB0AF18B97457009D0E17 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		487DB0B718B97457009D0E17 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				487DB0B818B97457009D0E17 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		487DB0CD18B97457009D0E17 /* InfoPlist.strings */ = {
@@ -394,6 +400,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLElasticView/HLElasticView-Prefix.pch";
 				INFOPLIST_FILE = "HLElasticView/HLElasticView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -407,6 +414,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLElasticView/HLElasticView-Prefix.pch";
 				INFOPLIST_FILE = "HLElasticView/HLElasticView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
